@@ -22,7 +22,7 @@ cloudinary.config({
   api_secret: process.env.API_SECRET,
 });
 
-const upload = multer({ dest: "uploads/" });
+const upload = multer({ dest: "/" });
 app.post("/addImages", upload.array("photo"), async (req, res) => {
   let images = {};
   for (let i = 0; i < req.files.length; i++) {
